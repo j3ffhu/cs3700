@@ -1,0 +1,24 @@
+{
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "java.semanticHighlighting.enabled": true,
+  "git.ignoreWindowsGit27Warning": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "explorer.confirmDelete": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "explorer.confirmDragAndDrop": false,
+  "editor.unicodeHighlight.allowedCharacters": {
+    " ": true
+  },
+  "nxConsole.showNodeVersionOnStartup": false,
+  "java.configuration.runtimes": [
+
+  ],
+  "java.jdt.ls.java.home":"d:\\Program Files\\Java\\jdk-17",
+}

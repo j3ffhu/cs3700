@@ -49,7 +49,6 @@ public class SocketClient {
 				username = args[i];
 			} else {
 				System.out.println("Unexpected argument: " + args[i]);
-				return;
 			}
 		}
 

@@ -1,29 +1,48 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+
     "version": "0.2.0",
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "TLSServer",
+            "request": "launch",
+            "mainClass": "hw1.Server",
+            "projectName": "cs3700",
+            "args": [
+                "-s"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "Server",
+            "request": "launch",
+            "mainClass": "hw1.Server",
+            "projectName": "cs3700"
+        },
         {
             "type": "java",
             "name": "SocketClient",
             "request": "launch",
             "mainClass": "hw1.SocketClient",
-            "args": 
-            [
-                "-p" , "27993" ,"localhost", "alex"
-            ], 
+            "args": [
+                "-p",
+                "27993",
+                "localhost",
+                "alex"
+            ]
         },
         {
             "type": "java",
             "name": "SocketClient tls",
             "request": "launch",
             "mainClass": "hw1.SocketClient",
-            "args": 
-            [
-                "-p" , "27994", "-s"  ,"localhost", "alex"
-            ],    
+            "args": [
+                "-p",
+                "27994",
+                "-s",
+                "localhost",
+                "alex"
+            ]
         }
     ]
 }

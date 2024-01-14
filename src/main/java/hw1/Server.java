@@ -24,50 +24,61 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Server {
+    
+	public static void main(String[] args) throws IOException {
 
-	public static void main(String[] args) {
-
-		final int portNumber = 27994;
+		 int portNumber = 27993;
 		
+         boolean secure = false;
+
 		 ServerSocket serverSocket = null;
- 
-		try {
-			
-	        // Create SSLServerSocket
-			SSLServerSocketFactory sslServerSocketFactory;
-			
-			char[] keystorePassword = "password".toCharArray();
-			KeyStore keyStore = KeyStore.getInstance("JKS");
-			
-			// keytool -genkeypair -keyalg RSA -keysize 2048 -keystore yourkeystore.jks -alias youralias
-			keyStore.load(new FileInputStream("keystore.jks"), keystorePassword);
 
-			// Set up the key manager factory
-			KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance("SunX509");
-			keyManagerFactory.init(keyStore, keystorePassword);
-
-			// Set up the trust manager factory
-			TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance("SunX509");
-			trustManagerFactory.init(keyStore);
-
-			// Set up the SSL context
-			SSLContext sslContext = SSLContext.getInstance("TLS");
-			sslContext.init(keyManagerFactory.getKeyManagers(), trustManagerFactory.getTrustManagers(), new SecureRandom());
-
-			sslServerSocketFactory = sslContext.getServerSocketFactory();
-			
-		    serverSocket = (SSLServerSocket) sslServerSocketFactory.createServerSocket(portNumber) ;
-		    System.out.println("Server is listening on TLS port " + portNumber);
-			
-		}  catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+         // Parse command-line arguments
+		for (int i = 0; i < args.length; i++) {
+		   if (args[i].equals("-s")) {
+				secure = true;
+                portNumber = 27994;
+			} else {
+				System.out.println("Unexpected argument: " + args[i]);
+			}
 		}
-     
  
-	 
-			
-
+		if (secure) {
+            try {			
+                // Create SSLServerSocket
+                SSLServerSocketFactory sslServerSocketFactory;
+                
+                char[] keystorePassword = "password".toCharArray();
+                KeyStore keyStore = KeyStore.getInstance("JKS");
+                
+                // keytool -genkeypair -keyalg RSA -keysize 2048 -keystore yourkeystore.jks -alias youralias
+                keyStore.load(new FileInputStream("keystore.jks"), keystorePassword);
+    
+                // Set up the key manager factory
+                KeyManagerFactory keyManagerFactory = KeyManagerFactory.getInstance("SunX509");
+                keyManagerFactory.init(keyStore, keystorePassword);
+    
+                // Set up the trust manager factory
+                TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance("SunX509");
+                trustManagerFactory.init(keyStore);
+    
+                // Set up the SSL context
+                SSLContext sslContext = SSLContext.getInstance("TLS");
+                sslContext.init(keyManagerFactory.getKeyManagers(), trustManagerFactory.getTrustManagers(), new SecureRandom());
+    
+                sslServerSocketFactory = sslContext.getServerSocketFactory();
+                
+                serverSocket = (SSLServerSocket) sslServerSocketFactory.createServerSocket(portNumber) ;
+                System.out.println("Server is listening on TLS port " + portNumber);
+                
+            }  catch (Exception e1) {
+                 e1.printStackTrace();
+            }    
+        } else {
+            serverSocket =  new ServerSocket(portNumber) ;
+		    System.out.println("Server is listening on port " + portNumber);
+        }
+ 
 			while (true) {
 				
 				try   {
