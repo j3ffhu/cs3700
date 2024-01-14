@@ -51,7 +51,7 @@ public class Server {
                 char[] keystorePassword = "password".toCharArray();
                 KeyStore keyStore = KeyStore.getInstance("JKS");
                 
-                // keytool -genkeypair -keyalg RSA -keysize 2048 -keystore yourkeystore.jks -alias youralias
+                // keytool -genkeypair -keyalg RSA -keysize 2048 -keystore keystore.jks -alias alias
                 keyStore.load(new FileInputStream("keystore.jks"), keystorePassword);
     
                 // Set up the key manager factory
