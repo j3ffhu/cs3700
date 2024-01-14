@@ -12,4 +12,6 @@ WORKDIR /app
 COPY --from=builder /app/target/cs3700-0.0.1-SNAPSHOT-jar-with-dependencies.jar .
 COPY run.sh ./run.sh
 COPY keystore.jks ./keystore.jks
+EXPOSE 27993 
+EXPOSE 27994
 ENTRYPOINT [ "./run.sh" ]
