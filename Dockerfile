@@ -6,7 +6,7 @@ RUN mvn -e -B dependency:resolve
 COPY src ./src
 RUN mvn clean compile assembly:single
 
-# Run --env ARGS=development
+# Run --env ARGS="ARGS="-p 27993 localhost alex"
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=builder /app/target/cs3700-0.0.1-SNAPSHOT-jar-with-dependencies.jar .
