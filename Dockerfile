@@ -14,8 +14,6 @@ COPY run.sh ./run.sh
 COPY keystore.jks ./keystore.jks
 EXPOSE 27993
 EXPOSE 27994
-ENV SID=alex
-ENV FLAG=
-ENV HOST=localhost
+ENV ARGS="-p 27993 proj1.3700.network alex"
 RUN chmod 777 ./run.sh
 ENTRYPOINT [ "./run.sh" ]
