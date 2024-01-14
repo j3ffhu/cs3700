@@ -116,7 +116,7 @@ public class SocketClient {
 //                }
 
 			Message init = new Message();
-			init.type = "start";
+			init.type = "hello";
 			init.username = username;
 
 			String userInput = objectMapper.writeValueAsString(init);
