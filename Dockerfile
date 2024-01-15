@@ -11,9 +11,6 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=builder /app/target/cs3700-0.0.1-SNAPSHOT-jar-with-dependencies.jar .
 COPY run.sh ./run.sh
-COPY keystore.jks ./keystore.jks
-EXPOSE 27993
-EXPOSE 27994
 ENV ARGS="-p 27993 proj1.3700.network alex"
 ENV ARGS_TLS="-p 27994 -s proj1.3700.network alex"
 RUN chmod 777 ./run.sh
