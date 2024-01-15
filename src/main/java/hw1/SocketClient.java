@@ -107,7 +107,6 @@ public class SocketClient {
 			// Send JSON message to the server
 			// ssl error if no match
 			writer.println(userInput);
-			call++;
 
 			String serverResponse = reader.readLine();
 
