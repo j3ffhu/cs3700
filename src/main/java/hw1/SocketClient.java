@@ -75,8 +75,6 @@ public class SocketClient {
 			}
 		}
 
-		 
-
 			BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
  
@@ -104,9 +102,8 @@ public class SocketClient {
 
 			String userInput = objectMapper.writeValueAsString(init);
 
-			// Send JSON message to the server
-			// ssl error if no match
 			writer.println(userInput);
+			call++;
 
 			String serverResponse = reader.readLine();
 
@@ -144,27 +141,16 @@ public class SocketClient {
 					System.exit(0);
 				}
 				words.remove(0);
-               
-				// if (message.flag != null) {
-				// 	// save flag
-				// 	System.out.println("Guess it right: " + message.flag);
-				// 	System.exit(0);
-				// }
-
+    
 				Guess guess = message.guesses.get(message.guesses.size() - 1);
 				List<Integer> marks = guess.marks;
 
 				// parse marks
 				for (int j = 0; j < 5; j++) {
-					// 0 remove all
+
 				    final int idx = j ;
 					final String sub = last.substring(idx, idx+1);
-					// "aahed","marks":[1,0,1,0,0]}],
-					// "aahed","marks":[0,2,0,0,0]}]
-					// if (marks.get(j) == 0 && sb.indexOf(last.substring(j, j+1)) == -1)  {
-						
-					// 	words = words.stream().filter( e -> !e.contains(sub)).collect(Collectors.toList());
-					// }  else  
+
 					if (marks.get(j) == 1) {
 						// keep if has it
 						words = words.stream().filter( e -> e.contains(sub)).collect(Collectors.toList());
@@ -173,10 +159,13 @@ public class SocketClient {
 					}   else  if (marks.get(j) == 2) {
 						// keep if eaxct match
 						words = words.stream().filter( e ->  e.substring(idx, idx+1).equals(sub)).collect(Collectors.toList());
-					}    
+					}   else if (marks.get(j) == 0 &&  last.indexOf(sub) == last.lastIndexOf(sub)) {
+                                           // 0  unique
+					   words = words.stream().filter( e -> !e.contains(sub)).collect(Collectors.toList());
+
+					}
+			    }
  
-			  
-			}
 		}
  
 	} 
