@@ -8,8 +8,7 @@
 ```
 
 # docker build -t cs3700:hw1 . 
-# docker run -it --env ARGS="-p 27993 proj1.3700.network jane_dos"  --env ARGS_TLS="-p 27994 -s proj1.3700.network jane_dos"  --rm cs3700:hw1
-
+# docker run -it --env ARGS="-p 27993 proj1.3700.network student_a"  --env ARGS_TLS="-p 27994 -s proj1.3700.network student_a"  --rm cs3700:hw1
 
 Connected to the  server on proj1.3700.network:27993
 Server response: {"id":"Ecydr/YfzwH9KMlxheLJ","type":"start"}
@@ -23,7 +22,7 @@ Server response: {"flag":"323e1c940c6c046d63b9cf24d13fa61a1d479918935fa3b7533419
 Guess it right: 323e1c940c6c046d63b9cf24d13fa61a1d479918935fa3b7533419f540827151
 secret : pekoe
 num of calls : 18
-username : jane_dos
+
 Connected to the TLS server on proj1.3700.network:27994
 Server response: {"id":"OUKPovswi/d/TAP6GUoy","type":"start"}
 Server response: {"guesses":[{"word":"aahed","marks":[2,1,1,0,0]}],"id":"OUKPovswi/d/TAP6GUoy","type":"retry"}
