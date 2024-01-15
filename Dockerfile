@@ -11,7 +11,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=builder /app/target/cs3700-0.0.1-SNAPSHOT-jar-with-dependencies.jar .
 COPY run.sh ./run.sh
-ENV ARGS="-p 27993 proj1.3700.network alex"
-ENV ARGS_TLS="-p 27994 -s proj1.3700.network alex"
+ENV ARGS="-p 27993 proj1.3700.network jane_dos"
+ENV ARGS_TLS="-p 27994 -s proj1.3700.network jane_dos"
 RUN chmod 777 ./run.sh
 ENTRYPOINT [ "./run.sh" ]
