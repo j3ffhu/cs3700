@@ -21,27 +21,27 @@
         },
         {
             "type": "java",
-            "name": "SocketClient",
+            "name": "SpoofingClient",
             "request": "launch",
-            "mainClass": "hw1.SocketClient",
+            "mainClass": "hw1.SpoofingClient",
             "args": [
                 "-p",
                 "27993",
-                "localhost",
-                "alex"
+                "proj1.3700.network",
+                "john_dos"
             ]
         },
         {
             "type": "java",
-            "name": "SocketClient tls",
+            "name": "SpoofingClient tls",
             "request": "launch",
-            "mainClass": "hw1.SocketClient",
+            "mainClass": "hw1.SpoofingClient",
             "args": [
                 "-p",
                 "27994",
                 "-s",
-                "localhost",
-                "alex"
+                "proj1.3700.network",
+                "jane_dos"
             ]
         }
     ]
