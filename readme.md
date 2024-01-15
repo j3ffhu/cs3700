@@ -21,7 +21,7 @@ Server response: {"guesses":[{"word":"aahed","marks":[0,0,0,1,0]},{"word":"abase
 Server response: {"flag":"323e1c940c6c046d63b9cf24d13fa61a1d479918935fa3b7533419f540827151","id":"Ecydr/YfzwH9KMlxheLJ","type":"bye"}
 Guess it right: 323e1c940c6c046d63b9cf24d13fa61a1d479918935fa3b7533419f540827151
 secret : pekoe
-num of calls : 18
+num of calls : 17
 
 Connected to the TLS server on proj1.3700.network:27994
 Server response: {"id":"OUKPovswi/d/TAP6GUoy","type":"start"}
@@ -31,5 +31,5 @@ Server response: {"guesses":[{"word":"aahed","marks":[2,1,1,0,0]},{"word":"abash
 Server response: {"flag":"409d3367eff53c44f794d6b97339ade5cd7d31d3c0d01192ad8bb4323f9e4308","id":"OUKPovswi/d/TAP6GUoy","type":"bye"}
 Guess it right: 409d3367eff53c44f794d6b97339ade5cd7d31d3c0d01192ad8bb4323f9e4308
 secret : asarh
-num of calls : 5
+num of calls : 4
 ```
