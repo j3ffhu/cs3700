@@ -1,8 +1,9 @@
 1. parse command line
 2. if secure, create TSL socket. otherwise normal
 3. constructure hello with student name, post server to get id
-4. pass guess + id to server. process retry message per marks
-5. refine new guess, repeat step 4 till server return bye message
+4. load word list from url
+5. pass guess from word list + id to server. filter word list per marks
+6. repeat step 4 till server return bye message
 
 ```
 
