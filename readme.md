@@ -5,6 +5,11 @@
 5. refine new guess, repeat step 4 till server return bye message
 
 ```
+
+# docker build -t cs3700:hw1 . 
+# docker run -it --env ARGS="-p 27993 proj1.3700.network jane_dos"  --env ARGS_TLS="-p 27994 -s proj1.3700.network jane_dos"  --rm cs3700:hw1
+
+
 Connected to the TLS server on localhost:27994
 Server response: {"type":"start","northeastern_username":"alex"}
 Server response: {"type":"retry","word":"abcde","guesses":[{"word":"abcde","marks":[1,0,0,0,1]}]}
