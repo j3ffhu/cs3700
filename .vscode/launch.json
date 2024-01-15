@@ -4,26 +4,9 @@
     "configurations": [
         {
             "type": "java",
-            "name": "TLSServer",
+            "name": "SocketClient",
             "request": "launch",
-            "mainClass": "hw1.Server",
-            "projectName": "cs3700",
-            "args": [
-                "-s"
-            ]
-        },
-        {
-            "type": "java",
-            "name": "Server",
-            "request": "launch",
-            "mainClass": "hw1.Server",
-            "projectName": "cs3700"
-        },
-        {
-            "type": "java",
-            "name": "SpoofingClient",
-            "request": "launch",
-            "mainClass": "hw1.SpoofingClient",
+            "mainClass": "hw1.SocketClient",
             "args": [
                 "-p",
                 "27993",
@@ -33,9 +16,9 @@
         },
         {
             "type": "java",
-            "name": "SpoofingClient tls",
+            "name": "SocketClient tls",
             "request": "launch",
-            "mainClass": "hw1.SpoofingClient",
+            "mainClass": "hw1.SocketClient",
             "args": [
                 "-p",
                 "27994",
