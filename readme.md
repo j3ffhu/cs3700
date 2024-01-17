@@ -7,8 +7,9 @@
 
 ```
 
-# docker build -t cs3700:hw1 . 
-# docker run -it --env ARGS="-p 27993 proj1.3700.network student_a"  --env ARGS_TLS="-p 27994 -s proj1.3700.network student_a"  --rm cs3700:hw1
+docker build -t cs3700:hw1 .
+
+docker run -it --env ARGS="-p 27993 proj1.3700.network student_a"  --env ARGS_TLS="-p 27994 -s proj1.3700.network student_a"  --rm cs3700:hw1
 
 Connected to the  server on proj1.3700.network:27993
 Server response: {"id":"Ecydr/YfzwH9KMlxheLJ","type":"start"}
