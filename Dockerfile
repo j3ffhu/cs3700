@@ -13,4 +13,4 @@ COPY --from=builder /app/target/cs3700-0.0.1-SNAPSHOT-jar-with-dependencies.jar 
 COPY client.sh ./client.sh
 ENV ARGS="-p 27993 proj1.3700.network tbd"
 RUN chmod 777 ./client.sh 
-ENTRYPOINT [./client.sh $ARGS]
+ENTRYPOINT [ "./client.sh"]
